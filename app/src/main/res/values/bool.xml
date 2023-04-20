@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="display_on_default_value">false</bool>
+    <bool name="pitches_default_value">true</bool>
+    <bool name="major_default_value">true</bool>
+    <bool name="minor_default_value">true</bool>
+    <bool name="modes_default_value">false</bool>
+</resources>

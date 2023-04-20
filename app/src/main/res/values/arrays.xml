@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="note_names">
+        <item>C</item>
+        <item>C♯/D♭</item>
+        <item>D</item>
+        <item>D♯/E♭</item>
+        <item>E</item>
+        <item>F</item>
+        <item>F♯/G♭</item>
+        <item>G</item>
+        <item>G♯/A♭</item>
+        <item>A</item>
+        <item>A♯/B♭</item>
+        <item>B</item>
+    </string-array>
+</resources>

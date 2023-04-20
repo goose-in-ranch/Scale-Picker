@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Scale Picker</string>
+    <string name="start_message">Press button to generate scale</string>
+    <string name="button_name">Random Scale</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="behavior_header">Behavior</string>
+    <string name="pitches_header">Pitches</string>
+    <string name="scale_types_header">Scale Types</string>
+    <string name="minor_header">Minor</string>
+    <string name="modes_header">Modes</string>
+    <!-- Behavior Preferences -->
+    <string name="display_on">Keep display on while app in use</string>
+
+
+
+</resources>
