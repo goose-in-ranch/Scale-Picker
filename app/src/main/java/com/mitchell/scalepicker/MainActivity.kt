@@ -17,6 +17,9 @@
 
   TODO: Also add a link to the github page.
  */
+//TODO: Make it so that OS back button on MainActivity returns to home screen
+//TODO: Instead of making it jump back and forth between MainActivity and SettingsActivity
+
 package com.mitchell.scalepicker
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
