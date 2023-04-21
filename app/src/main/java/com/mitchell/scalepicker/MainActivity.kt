@@ -8,12 +8,14 @@
   TODO: when the screen rotates. Please fix.
  */
 /*TODO: I would like to add a feature in the preferences screen where
-  TODO: users can long press a pitch and all other pitches besides that one
+  TODO: users can long press a pitch or mode and all other pitches besides that one
   TODO: will be disabled.
  */
 /*TODO: Add "about" activity and preference. I believe I can use an intent directly with a preference.
   TODO: Should include Name, Email(android dev), GPL stuff, version
   TODO: Also add licensing header to files
+
+  TODO: Also add a link to the github page.
  */
 package com.mitchell.scalepicker
 import android.content.Intent
