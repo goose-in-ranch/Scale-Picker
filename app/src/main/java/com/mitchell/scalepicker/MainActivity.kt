@@ -1,14 +1,8 @@
-/*TODO: Now begin work on implementing Modes in settings.
-  TODO: Use what you have already built in SettingsActivity
-  TODO: To reduce overhead and be as efficient as possible
- */
 /*TODO: Modes have been implemented
-  TODO: Now do error checking to make sure at least one mode
-  TODO: (And one of each type of selected scale types) is required to be selected
-  TODO: similar to pitch error checking
-
-  TODO: Maybe make is so that if all dependence switches are disabled (melodic minor, natural minor etc..)
-  TODO: then the parent switch (Minor) is disabled
+  TODO: Finish designing error checking. Deciding to use the version in MODES.
+  TODO: maybe do a toast message along with it.
+  TODO: somehow more clearly differentiate categories (modes, minor) from sub categories (lydian, harmonic minor)
+  TODO: This could be through indentation or icons
  */
 /*TODO: There is a bug in which the scale displayed on screen is lost
   TODO: when the screen rotates. Please fix.
@@ -16,6 +10,10 @@
 /*TODO: I would like to add a feature in the preferences screen where
   TODO: users can long press a pitch and all other pitches besides that one
   TODO: will be disabled.
+ */
+/*TODO: Add "about" activity and preference. I believe I can use an intent directly with a preference.
+  TODO: Should include Name, Email(android dev), GPL stuff, version
+  TODO: Also add licensing header to files
  */
 package com.mitchell.scalepicker
 import android.content.Intent

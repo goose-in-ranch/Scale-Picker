@@ -85,10 +85,11 @@ class SettingsActivity : AppCompatActivity(){
                 //this one will be like pitch behavior
                 //If all minor scales are deselected
                 if (key.substring(0,5) == "minor"){
-                    Toast.makeText(this, "At least one minor type must be selected, or minor disabled.", Toast.LENGTH_SHORT).show()
                     prefsEditor.putBoolean(key, true)
+                    prefsEditor.putBoolean("minor", false)
                     prefsEditor.commit()
                     recreate()
+                    Toast.makeText(this, "Minor Scales Disabled", Toast.LENGTH_SHORT).show()
                 }
 
                 //this one will disable the category if the user attempts to deselect everything
@@ -98,6 +99,7 @@ class SettingsActivity : AppCompatActivity(){
                     prefsEditor.putBoolean("modes", false)
                     prefsEditor.commit()
                     recreate()
+                    Toast.makeText(this, "Modal Scales Disabled", Toast.LENGTH_SHORT).show()
                 }
             }
         }
