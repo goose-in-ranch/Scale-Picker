@@ -3,6 +3,7 @@
     <string name="start_message">Press button to generate scale</string>
     <string name="button_name">Random Scale</string>
     <string name="title_activity_settings">Settings</string>
+    <string name="title_about">About</string>
 
     <!-- Preference Titles -->
     <string name="behavior_header">Behavior</string>
@@ -10,9 +11,12 @@
     <string name="scale_types_header">Scale Types</string>
     <string name="minor_header">Minor</string>
     <string name="modes_header">Modes</string>
+    <string name="about_header">About</string>
     <!-- Behavior Preferences -->
     <string name="display_on">Keep display on while app in use</string>
 
-
-
+    <!-- About Activity TextViews -->
+    <string name="about_info">Mitchell S.\nmitchellsdev@gmail.com\n\nLicensed under GPLv3\n\nScale Picker Version 1.1</string>
+    <string name="github_link" translatable="false"> <a href="https://github.com/goose-in-ranch/Scale-Picker">View Project on GitHub</a> </string>
+    <string name="gpl_link" translatable="false"> <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">View GPLv3 License Online</a></string>
 </resources>
