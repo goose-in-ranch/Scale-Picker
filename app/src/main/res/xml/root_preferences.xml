@@ -1,4 +1,5 @@
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory app:title="@string/behavior_header">
         <SwitchPreferenceCompat
@@ -184,6 +185,19 @@
             </SwitchPreferenceCompat>
 
         </PreferenceCategory>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/about_header">
+        <Preference
+            app:key="about"
+            app:summary="Show App Info"
+            app:title="About">
+
+            <intent
+                android:targetPackage="com.mitchell.scalepicker"
+                android:targetClass="com.mitchell.scalepicker.about"/>
+        </Preference>
 
     </PreferenceCategory>
 
