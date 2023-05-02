@@ -126,18 +126,21 @@
             <SwitchPreferenceCompat
                 app:defaultValue="true"
                 app:dependency="minor"
+                app:isPreferenceVisible="false"
                 app:key="minor_natural"
                 app:title="Natural Minor"></SwitchPreferenceCompat>
 
             <SwitchPreferenceCompat
                 app:defaultValue="true"
                 app:dependency="minor"
+                app:isPreferenceVisible="false"
                 app:key="minor_harmonic"
                 app:title="Harmonic Minor"></SwitchPreferenceCompat>
 
             <SwitchPreferenceCompat
                 app:defaultValue="true"
                 app:dependency="minor"
+                app:isPreferenceVisible="false"
                 app:key="minor_melodic"
                 app:title="Melodic Minor"></SwitchPreferenceCompat>
 
@@ -155,30 +158,35 @@
             <SwitchPreferenceCompat
                 app:defaultValue="true"
                 app:dependency="modes"
+                app:isPreferenceVisible="false"
                 app:key="modes_dorian"
                 app:title="Dorian"></SwitchPreferenceCompat>
 
             <SwitchPreferenceCompat
                 app:defaultValue="true"
                 app:dependency="modes"
+                app:isPreferenceVisible="false"
                 app:key="modes_phrygian"
                 app:title="Phrygian"></SwitchPreferenceCompat>
 
             <SwitchPreferenceCompat
                 app:defaultValue="true"
                 app:dependency="modes"
+                app:isPreferenceVisible="false"
                 app:key="modes_lydian"
                 app:title="Lydian"></SwitchPreferenceCompat>
 
             <SwitchPreferenceCompat
                 app:defaultValue="true"
                 app:dependency="modes"
+                app:isPreferenceVisible="false"
                 app:key="modes_mixolydian"
                 app:title="Mixolydian"></SwitchPreferenceCompat>
 
             <SwitchPreferenceCompat
                 app:defaultValue="false"
                 app:dependency="modes"
+                app:isPreferenceVisible="false"
                 app:key="modes_locrian"
                 app:title="Locrian"></SwitchPreferenceCompat>
 
