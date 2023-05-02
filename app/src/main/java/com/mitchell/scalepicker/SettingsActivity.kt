@@ -37,7 +37,7 @@ class SettingsActivity : AppCompatActivity(){
 
     }
 
-    //Function to prevent user from deselecting ALL pitches. At least ONE needs to be selected.
+    //Function to prevent user from deselecting ALL pitches or modes. At least ONE needs to be selected.
     //Keeping this code in a separate function instead of onCreate seems to be better practice
     //And allows for smoother UI regeneration with recreate()
     private fun prefsManager(preferences: SharedPreferences){
