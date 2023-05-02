@@ -9,7 +9,9 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory app:title="@string/pitches_header">
+    <!--TODO: Experiment with checkboxes in Minor and Modal subcategories -->
+    <PreferenceCategory
+        app:title="@string/pitches_header">
         <Preference
             app:key="enable_all_pitches"
             app:summary="Click to Enable All Pitches"
@@ -18,171 +20,167 @@
         </Preference>
 
         <SwitchPreferenceCompat
+            app:defaultValue="@bool/pitches_default_value"
             app:key="pitch_0"
-            app:title="C"
-            app:defaultValue="@bool/pitches_default_value">
-        </SwitchPreferenceCompat>
+            app:title="C"></SwitchPreferenceCompat>
 
         <SwitchPreferenceCompat
+            app:defaultValue="@bool/pitches_default_value"
             app:key="pitch_1"
-            app:title="C♯/D♭"
-            app:defaultValue="@bool/pitches_default_value">
+            app:title="C♯/D♭">
 
         </SwitchPreferenceCompat>
 
         <SwitchPreferenceCompat
+            app:defaultValue="@bool/pitches_default_value"
             app:key="pitch_2"
-            app:title="D"
-            app:defaultValue="@bool/pitches_default_value">
+            app:title="D">
 
         </SwitchPreferenceCompat>
 
         <SwitchPreferenceCompat
+            app:defaultValue="@bool/pitches_default_value"
             app:key="pitch_3"
-            app:title="D♯/E♭"
-            app:defaultValue="@bool/pitches_default_value">
+            app:title="D♯/E♭">
 
         </SwitchPreferenceCompat>
 
         <SwitchPreferenceCompat
+            app:defaultValue="@bool/pitches_default_value"
             app:key="pitch_4"
-            app:title="E"
-            app:defaultValue="@bool/pitches_default_value">
+            app:title="E">
 
         </SwitchPreferenceCompat>
 
         <SwitchPreferenceCompat
+            app:defaultValue="@bool/pitches_default_value"
             app:key="pitch_5"
-            app:title="F"
-            app:defaultValue="@bool/pitches_default_value">
+            app:title="F">
 
         </SwitchPreferenceCompat>
 
         <SwitchPreferenceCompat
+            app:defaultValue="@bool/pitches_default_value"
             app:key="pitch_6"
-            app:title="F♯/G♭"
-            app:defaultValue="@bool/pitches_default_value">
+            app:title="F♯/G♭">
 
         </SwitchPreferenceCompat>
 
         <SwitchPreferenceCompat
+            app:defaultValue="@bool/pitches_default_value"
             app:key="pitch_7"
-            app:title="G"
-            app:defaultValue="@bool/pitches_default_value">
+            app:title="G">
 
         </SwitchPreferenceCompat>
 
         <SwitchPreferenceCompat
+            app:defaultValue="@bool/pitches_default_value"
             app:key="pitch_8"
-            app:title="G♯/A♭"
-            app:defaultValue="@bool/pitches_default_value">
+            app:title="G♯/A♭">
 
         </SwitchPreferenceCompat>
 
         <SwitchPreferenceCompat
+            app:defaultValue="@bool/pitches_default_value"
             app:key="pitch_9"
-            app:title="A"
-            app:defaultValue="@bool/pitches_default_value">
+            app:title="A">
 
         </SwitchPreferenceCompat>
 
         <SwitchPreferenceCompat
+            app:defaultValue="@bool/pitches_default_value"
             app:key="pitch_10"
-            app:title="A♯/B♭"
-            app:defaultValue="@bool/pitches_default_value">
+            app:title="A♯/B♭">
 
         </SwitchPreferenceCompat>
 
         <SwitchPreferenceCompat
+            app:defaultValue="@bool/pitches_default_value"
             app:key="pitch_11"
-            app:title="B"
-            app:defaultValue="@bool/pitches_default_value">
+            app:title="B">
 
         </SwitchPreferenceCompat>
 
 
     </PreferenceCategory>
 
-    <PreferenceCategory app:title="@string/scale_types_header">
-        <SwitchPreferenceCompat
-            app:key="major"
-            app:title="Major"
-            app:defaultValue="@bool/major_default_value">
-        </SwitchPreferenceCompat>
-
-        <PreferenceCategory app:title="@string/minor_header">
-        <SwitchPreferenceCompat
-            app:key="minor"
-            app:title="Minor"
-            app:defaultValue="@bool/minor_default_value"
-            app:summary="Enables/Disables Minor Scales">
-        </SwitchPreferenceCompat>
+    <PreferenceCategory
+        app:allowDividerBelow="false"
+        app:title="@string/scale_types_header">
 
             <SwitchPreferenceCompat
+                app:allowDividerBelow="false"
+                app:defaultValue="@bool/major_default_value"
+                app:key="major"
+                app:title="Major"></SwitchPreferenceCompat>
+
+        <PreferenceCategory
+            app:allowDividerBelow="false"
+            app:title="@string/minor_header">
+            <SwitchPreferenceCompat
+                app:defaultValue="@bool/minor_default_value"
+                app:key="minor"
+                app:summary="Enables/Disables Minor Scales"
+                app:title="Minor"></SwitchPreferenceCompat>
+
+            <SwitchPreferenceCompat
+                app:defaultValue="true"
+                app:dependency="minor"
                 app:key="minor_natural"
-                app:title="Natural Minor"
-                app:defaultValue="true"
-                app:dependency="minor">
-            </SwitchPreferenceCompat>
+                app:title="Natural Minor"></SwitchPreferenceCompat>
 
             <SwitchPreferenceCompat
+                app:defaultValue="true"
+                app:dependency="minor"
                 app:key="minor_harmonic"
-                app:title="Harmonic Minor"
-                app:defaultValue="true"
-                app:dependency="minor">
-            </SwitchPreferenceCompat>
+                app:title="Harmonic Minor"></SwitchPreferenceCompat>
 
             <SwitchPreferenceCompat
-                app:key="minor_melodic"
-                app:title="Melodic Minor"
                 app:defaultValue="true"
-                app:dependency="minor">
-            </SwitchPreferenceCompat>
+                app:dependency="minor"
+                app:key="minor_melodic"
+                app:title="Melodic Minor"></SwitchPreferenceCompat>
 
         </PreferenceCategory>
 
-        <PreferenceCategory app:title="@string/modes_header">
-        <SwitchPreferenceCompat
-            app:key="modes"
-            app:title="Modes"
-            app:defaultValue="@bool/modes_default_value"
-            app:summary="Enables/Disables Modal Scales">
-        </SwitchPreferenceCompat>
+        <PreferenceCategory
+            app:allowDividerAbove="false"
+            app:title="@string/modes_header">
+            <SwitchPreferenceCompat
+                app:defaultValue="@bool/modes_default_value"
+                app:key="modes"
+                app:summary="Enables/Disables Modal Scales"
+                app:title="Modes"></SwitchPreferenceCompat>
 
             <SwitchPreferenceCompat
+                app:defaultValue="true"
+                app:dependency="modes"
                 app:key="modes_dorian"
-                app:title="Dorian"
-                app:defaultValue="true"
-                app:dependency="modes">
-            </SwitchPreferenceCompat>
+                app:title="Dorian"></SwitchPreferenceCompat>
 
             <SwitchPreferenceCompat
+                app:defaultValue="true"
+                app:dependency="modes"
                 app:key="modes_phrygian"
-                app:title="Phrygian"
-                app:defaultValue="true"
-                app:dependency="modes">
-            </SwitchPreferenceCompat>
+                app:title="Phrygian"></SwitchPreferenceCompat>
 
             <SwitchPreferenceCompat
+                app:defaultValue="true"
+                app:dependency="modes"
                 app:key="modes_lydian"
-                app:title="Lydian"
-                app:defaultValue="true"
-                app:dependency="modes">
-            </SwitchPreferenceCompat>
+                app:title="Lydian"></SwitchPreferenceCompat>
 
             <SwitchPreferenceCompat
+                app:defaultValue="true"
+                app:dependency="modes"
                 app:key="modes_mixolydian"
-                app:title="Mixolydian"
-                app:defaultValue="true"
-                app:dependency="modes">
-            </SwitchPreferenceCompat>
+                app:title="Mixolydian"></SwitchPreferenceCompat>
 
             <SwitchPreferenceCompat
-                app:key="modes_locrian"
-                app:title="Locrian"
                 app:defaultValue="false"
-                app:dependency="modes">
-            </SwitchPreferenceCompat>
+                app:dependency="modes"
+                app:key="modes_locrian"
+                app:title="Locrian"></SwitchPreferenceCompat>
 
         </PreferenceCategory>
 
