@@ -12,7 +12,7 @@ import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager.getDefaultSharedPreferences
 
 class SettingsActivity : AppCompatActivity(){
-
+//is this comment made only on branch please
     //These are global so they can be accessed and defined throughout ALL functions and subclasses
     private lateinit var preferences: SharedPreferences
     private lateinit var listener: OnSharedPreferenceChangeListener
