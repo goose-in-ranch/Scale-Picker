@@ -22,15 +22,14 @@
 
 package com.mitchell.scalepicker
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceManager
 import java.util.Vector
 
@@ -134,6 +133,16 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
 
 
+    }
+
+    //This function makes app switch to home screen when back button is pressed in main activity
+    //Without this block, the app would switch back and forth between MainActivity and SettingsActivity
+    //in a loop if SettingsActivity had been visited.
+    override fun onBackPressed() {
+        val intent = Intent(Intent.ACTION_MAIN)
+        intent.addCategory(Intent.CATEGORY_HOME)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent)
     }
 
 }
