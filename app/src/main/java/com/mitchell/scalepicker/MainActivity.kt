@@ -17,7 +17,7 @@ import java.util.Vector
 
 class MainActivity : AppCompatActivity() {
 
-    //Global variables used for passing things between TextViews and savedInstanceState
+    //Global strings used for passing things between TextViews and savedInstanceState
     private var pitchClassSavedText = ""
     private var modeSavedText = ""
 
@@ -64,7 +64,6 @@ class MainActivity : AppCompatActivity() {
             setNoteAndMode(pitchClassText, modeText)
         }
 
-        //}
         //this block handles the randomButton being tapped
         randomButton.setOnClickListener{
             pitchClassText.text = notePicker(enabledNoteNames)
@@ -78,18 +77,15 @@ class MainActivity : AppCompatActivity() {
         return noteNames.random()
     }
 
-    //Function to return a random mode
-    private fun modePicker(modeNames: Vector<String>): String {
-        return modeNames.random()
-    }
-
-    //Function to update textviews after button press and save values to savedInstanceState.
-    //this functionality (except the new savedInstanceState implementation) was in the onCreate function
-    //up until (and including) version 1.1.2
-
+    //Function to save values to global strings to be used by savedInstanceState.
     private fun setNoteAndMode(pitchClassText: TextView, modeText: TextView){
         pitchClassSavedText = pitchClassText.text.toString()
         modeSavedText = modeText.text.toString()
+    }
+
+    //Function to return a random mode
+    private fun modePicker(modeNames: Vector<String>): String {
+        return modeNames.random()
     }
 
     //function to create the AppBar
@@ -117,13 +113,14 @@ class MainActivity : AppCompatActivity() {
     //This function makes app switch to home screen when back button is pressed in main activity
     //Without this block, the app would switch back and forth between MainActivity and SettingsActivity
     //in a loop if SettingsActivity had been visited.
-    override fun onBackPressed() {
+    override fun onBackPressed() { //TODO Deprecating soon. Need to find a new hotfix.
         val intent = Intent(Intent.ACTION_MAIN)
         intent.addCategory(Intent.CATEGORY_HOME)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         startActivity(intent)
     }
 
+    //Used to save UI TextViews to preserve them during rotation/multi-window type events.
     override fun onSaveInstanceState(outState: Bundle) {
         outState.putString("pitch_class_tag", pitchClassSavedText)
         outState.putString("mode_text_tag", modeSavedText)
