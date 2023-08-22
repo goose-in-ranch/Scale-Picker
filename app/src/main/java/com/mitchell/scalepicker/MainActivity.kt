@@ -1,25 +1,7 @@
-/*TODO: Modes have been implemented
-  TODO: Finish designing error checking. Deciding to use the version in MODES.
-  TODO: maybe do a toast message along with it.
-  TODO: somehow more clearly differentiate categories (modes, minor) from sub categories (lydian, harmonic minor)
-  TODO: This could be through indentation or icons
- */
-/*TODO: There is a bug in which the scale displayed on screen is lost
-  TODO: when the screen rotates. Please fix.
- */
 /*TODO: I would like to add a feature in the preferences screen where
   TODO: users can long press a pitch or mode and all other pitches besides that one
   TODO: will be disabled.
  */
-/*TODO: Add "about" activity and preference. I believe I can use an intent directly with a preference.
-  TODO: Should include Name, Email(android dev), GPL stuff, version
-  TODO: Also add licensing header to files
-
-  TODO: Also add a link to the github page.
- */
-//TODO: Make it so that OS back button on MainActivity returns to home screen
-//TODO: Instead of making it jump back and forth between MainActivity and SettingsActivity
-
 package com.mitchell.scalepicker
 import android.content.Intent
 import android.os.Bundle
@@ -34,6 +16,11 @@ import androidx.preference.PreferenceManager
 import java.util.Vector
 
 class MainActivity : AppCompatActivity() {
+
+    //Global variables used for passing things between TextViews and savedInstanceState
+    private var pitchClassSavedText = ""
+    private var modeSavedText = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -69,48 +56,40 @@ class MainActivity : AppCompatActivity() {
         val modeText: TextView = findViewById(R.id.scale_mode)  //Text for mode. (Major, Harmonic Minor, Phrygian, etc)
         val randomButton: Button = findViewById(R.id.button)   //Button to generate scale
 
+        //restore scale pitch and mode from savedInstanceState
+        //check if there is a saved instance state in the bundle
+        if (savedInstanceState != null) {
+            pitchClassText.text = savedInstanceState.getString("pitch_class_tag")
+            modeText.text = savedInstanceState.getString("mode_text_tag")
+            setNoteAndMode(pitchClassText, modeText)
+        }
+
+        //}
         //this block handles the randomButton being tapped
         randomButton.setOnClickListener{
             pitchClassText.text = notePicker(enabledNoteNames)
             modeText.text = modePicker(enabledModeNames)
+            setNoteAndMode(pitchClassText, modeText)
         }
     }
 
     //Function to return a random note name
     private fun notePicker(noteNames: Vector<String>): String {
-        //commented lines below are original function
-        //val noteNames = arrayOf("C", "C♯/D♭", "D", "D♯/E♭", "E", "F", "F♯/G♭", "G", "G♯/A♭", "A", "A♯/B♭", "B")
-        //return noteNames.getString((0..11).random())
-        //val noteNames: Array<String> = resources.getStringArray(R.array.note_names)
-
-       // return noteNames.elementAt((0..noteNames.count()).random() - 1)
         return noteNames.random()
     }
 
     //Function to return a random mode
     private fun modePicker(modeNames: Vector<String>): String {
         return modeNames.random()
-/*
-        when ((0..2).random()) { //logic to select scales at random.
-            0 -> return "Major"
-            1 -> {
-                when((0..2).random()){
-                    0 -> return "Natural Minor"
-                    1 -> return "Harmonic Minor"
-                    2 -> return "Melodic Minor"
-                }
-            }
-            2 -> {
-                when((0..3).random()){
-                    0 -> return "Dorian"
-                    1 -> return "Phrygian"
-                    2 -> return "Lydian"
-                    3 -> return "Mixolydian"
-                }
-            }
-        }
-    return "error" // this return statement should never be reached
-*/
+    }
+
+    //Function to update textviews after button press and save values to savedInstanceState.
+    //this functionality (except the new savedInstanceState implementation) was in the onCreate function
+    //up until (and including) version 1.1.2
+
+    private fun setNoteAndMode(pitchClassText: TextView, modeText: TextView){
+        pitchClassSavedText = pitchClassText.text.toString()
+        modeSavedText = modeText.text.toString()
     }
 
     //function to create the AppBar
@@ -145,4 +124,9 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putString("pitch_class_tag", pitchClassSavedText)
+        outState.putString("mode_text_tag", modeSavedText)
+        super.onSaveInstanceState(outState)
+    }
 }
