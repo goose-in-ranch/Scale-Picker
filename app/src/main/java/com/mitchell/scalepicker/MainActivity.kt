@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     //Global strings used for passing things between TextViews and savedInstanceState
     private var pitchClassSavedText = ""
-    private var modeSavedText = ""
+    private var modeSavedText = "" //set later as the startup message. Cannot be set here because it is not in scope
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +55,10 @@ class MainActivity : AppCompatActivity() {
         val pitchClassText: TextView = findViewById(R.id.scale_pitch) //Text for letter name to display. (A, C#, Bb etc)
         val modeText: TextView = findViewById(R.id.scale_mode)  //Text for mode. (Major, Harmonic Minor, Phrygian, etc)
         val randomButton: Button = findViewById(R.id.button)   //Button to generate scale
+
+        //sets the string for savedInstanceState to the default startup message.
+        //This is to prevent the screen from clearing and looking silly if the user rotates the screen before picking a scale
+        modeSavedText = resources.getString(R.string.start_message)
 
         //restore scale pitch and mode from savedInstanceState
         //check if there is a saved instance state in the bundle
