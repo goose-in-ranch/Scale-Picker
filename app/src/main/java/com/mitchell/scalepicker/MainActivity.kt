@@ -2,6 +2,9 @@
   TODO: users can long press a pitch or mode and all other pitches besides that one
   TODO: will be disabled.
  */
+/*TODO FEATURE: I would like to add a sets feature (maybe accessible through the appbar)
+  TODO: 	this way people can create and save a set in the preferences.
+ */
 package com.mitchell.scalepicker
 import android.content.Intent
 import android.os.Bundle
