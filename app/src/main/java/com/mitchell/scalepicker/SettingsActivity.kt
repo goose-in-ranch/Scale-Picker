@@ -84,7 +84,7 @@ class SettingsActivity : AppCompatActivity(){
 
                 //this one will be like pitch behavior
                 //If all minor scales are deselected
-                if (key.substring(0,5) == "minor"){
+                if (key?.substring(0,5) == "minor"){
                     prefsEditor.putBoolean(key, true)
                     prefsEditor.putBoolean("minor", false)
                     prefsEditor.commit()
@@ -132,15 +132,15 @@ class SettingsActivity : AppCompatActivity(){
 
     //makes the OS back button act like the application's UP button
     //This should allow preferences to work as expected when using back button
-    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
-        if (keyCode == KeyEvent.KEYCODE_BACK){
-            val mainIntent = Intent(this, MainActivity::class.java)
-            startActivity(mainIntent)
-            return true
-        }
-        return super.onKeyDown(keyCode, event)
-
-    }
+//    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+//        if (keyCode == KeyEvent.KEYCODE_BACK){
+//            val mainIntent = Intent(this, MainActivity::class.java)
+//            startActivity(mainIntent)
+//            return true
+//        }
+//        return super.onKeyDown(keyCode, event)
+//
+//    }
 
     //these overrides are here as good practice, keeps listeners from hanging when activity isnt loaded.
     //Re-registers when activity resumes
