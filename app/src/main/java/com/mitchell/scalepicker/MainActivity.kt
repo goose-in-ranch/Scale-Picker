@@ -119,7 +119,7 @@ class MainActivity : AppCompatActivity() {
 
     //This function makes app switch to home screen when back button is pressed in main activity
     //Without this block, the app would switch back and forth between MainActivity and SettingsActivity
-    //in a loop if SettingsActivity had been visited.
+    //in a loop if SettingsActivity had been visited (Because of Settings onkeydown being required).
     @Deprecated("Deprecated in Java")
     override fun onBackPressed() { //TODO Deprecating soon. Find an alternative
         val intent = Intent(Intent.ACTION_MAIN)
