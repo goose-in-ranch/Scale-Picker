@@ -15,7 +15,6 @@ import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
 import androidx.preference.PreferenceManager
 import java.util.Vector
 
@@ -28,7 +27,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        WindowCompat.enableEdgeToEdge(window)
 
         //shared preference and condition to set or unset "Screen Always On"
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this)
@@ -119,16 +117,17 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    //This code snippet seems no longer needed in SDK 36. Removing soon
     //This function makes app switch to home screen when back button is pressed in main activity
     //Without this block, the app would switch back and forth between MainActivity and SettingsActivity
     //in a loop if SettingsActivity had been visited.
-    @Deprecated("Deprecated in Java")
-    override fun onBackPressed() { //TODO Deprecating soon. Find an alternative
-        val intent = Intent(Intent.ACTION_MAIN)
-        intent.addCategory(Intent.CATEGORY_HOME)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-        startActivity(intent)
-    }
+//    @Deprecated("Deprecated in Java")
+//    override fun onBackPressed() { //TODO Deprecating soon. Find an alternative
+//        val intent = Intent(Intent.ACTION_MAIN)
+//        intent.addCategory(Intent.CATEGORY_HOME)
+//        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+//        startActivity(intent)
+//    }
 
     //Used to save UI TextViews to preserve them during rotation/multi-window type events.
     override fun onSaveInstanceState(outState: Bundle) {
