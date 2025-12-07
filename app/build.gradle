@@ -11,8 +11,8 @@ android {
         applicationId "com.mitchell.scalepicker"
         minSdk 21
         targetSdk 36
-        versionCode 1140
-        versionName '1.1.4'
+        versionCode 1150
+        versionName '1.1.5'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

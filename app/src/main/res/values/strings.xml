@@ -16,7 +16,7 @@
     <string name="display_on">Keep display on while app in use</string>
 
     <!-- About Activity TextViews -->
-    <string name="about_info">Mitchell S.\nmitchellsdev@gmail.com\n\nLicensed under GPLv3\n\nScale Picker Version 1.1.4</string>
+    <string name="about_info">Mitchell S.\nmitchellsdev@gmail.com\n\nLicensed under GPLv3\n\nScale Picker Version 1.1.5</string>
     <string name="github_link" translatable="false"> <a href="https://github.com/goose-in-ranch/Scale-Picker">View Project on GitHub</a> </string>
     <string name="gpl_link" translatable="false"> <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">View GPLv3 License Online</a></string>
 </resources>
